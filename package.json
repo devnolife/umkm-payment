@@ -1,0 +1,21 @@
+{
+  "name": "umkm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Platform pemesanan makanan UMKM - Monorepo",
+  "scripts": {
+    "dev:web": "turbo run dev --filter=@umkm/web",
+    "dev:mobile": "turbo run dev --filter=@umkm/mobile",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "db:push": "pnpm --filter @umkm/web db:push",
+    "db:migrate": "pnpm --filter @umkm/web db:migrate",
+    "db:seed": "pnpm --filter @umkm/web db:seed",
+    "db:studio": "pnpm --filter @umkm/web db:studio"
+  },
+  "packageManager": "pnpm@10.14.0",
+  "devDependencies": {
+    "turbo": "^2.8.10"
+  }
+}
