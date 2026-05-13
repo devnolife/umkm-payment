@@ -6,13 +6,14 @@
   "scripts": {
     "dev:web": "turbo run dev --filter=@umkm/web",
     "dev:mobile": "turbo run dev --filter=@umkm/mobile",
+    "dev:api": "cd apps/api && go run ./cmd/server",
     "dev": "turbo run dev",
+    "api:build": "cd apps/api && go build -o bin/api.exe ./cmd/server",
+    "api:tidy": "cd apps/api && go mod tidy",
+    "api:seed": "cd apps/api && go run ./cmd/seed",
+    "api:dbcheck": "cd apps/api && go run ./cmd/dbcheck",
     "build": "turbo run build",
-    "lint": "turbo run lint",
-    "db:push": "pnpm --filter @umkm/web db:push",
-    "db:migrate": "pnpm --filter @umkm/web db:migrate",
-    "db:seed": "pnpm --filter @umkm/web db:seed",
-    "db:studio": "pnpm --filter @umkm/web db:studio"
+    "lint": "turbo run lint"
   },
   "packageManager": "pnpm@10.14.0",
   "devDependencies": {
